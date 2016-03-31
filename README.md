@@ -27,13 +27,15 @@ node03
 node01
 ```
 
-## Authenticación SSH con usuario root y clave pública Se deberá crear la clave pública y privada y el controller
+## Authenticación SSH con usuario root y clave pública
+Se crean la clave pública y privada en el controller.
+
 ```sh
 $ sudo -s
 $ ssh-kegen
 ```
 
-Se generarán los siguientes archivos:
+Esto da como resultado la generación de los siguientes archivos:
 ```sh
 $ ls /root/.ssh/
 id_rsa  id_rsa.pub  known_hosts
