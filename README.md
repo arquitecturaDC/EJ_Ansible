@@ -27,9 +27,7 @@ node03
 node01
 ```
 
-## Authenticación SSH con usuario root y clave pública
-Acciones a realizar el Ansible Controller
-
+## Authenticación SSH con usuario root y clave pública Se deberá crear la clave pública y privada y el controller
 ```sh
 $ sudo -s
 $ ssh-kegen
