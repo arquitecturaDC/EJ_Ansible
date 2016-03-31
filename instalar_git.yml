@@ -1,0 +1,9 @@
+---
+
+- hosts: git
+  become: true
+  tasks:
+  - name: Install package
+    apt: name=git state=latest
+  - name: Crear archivo en /opt
+    file: path=/opt/archivoAnsible.prueba state=touch
