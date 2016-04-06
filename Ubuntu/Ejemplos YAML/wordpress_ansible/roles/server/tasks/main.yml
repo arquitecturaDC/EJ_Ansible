@@ -1,0 +1,17 @@
+---
+# tasks file for server
+- name: Update apt-cache
+  apt: update_cache=yes
+  become: true
+- name: Instalar el software requerido
+  apt: name={{ item }} state=present
+  become: true
+  with_items:
+     - apache2
+     - mysql-server
+     - php5-mysql
+     - php5
+     - libapache2-mod-php5
+     - php5-mcrypt
+     - python-mysqldb
+  
