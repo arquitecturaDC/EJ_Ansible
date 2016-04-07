@@ -1,0 +1,24 @@
+---
+- hosts: servidores
+  sudo: yes
+  tasks:
+    - name: agregar key
+      command: apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+
+    - name: agregar repositorio
+      shell: echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/10gen.list creates=/etc/apt/sources.list.d/10gen.list
+
+    - name: instalar mongodb
+      apt: name=mongodb-org update_cache=yes state=latest
+
+    - name: chequear servicio
+      service: name=mongod state=restarted
+
+    - name: instalar pip
+      apt: name=python-pip update_cache=yes state=latest
+
+    - name: instalar pymongo
+      pip: name=pymongo state=present
+
+    - name: crear una base de datos y usuario de prueba
+      mongodb_user: database=test_telefonica name=telefonica password=12345 state=present
