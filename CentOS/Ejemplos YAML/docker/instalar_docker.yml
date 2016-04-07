@@ -1,0 +1,23 @@
+---
+- hosts: docker
+  become: true
+  tasks:
+   - name: Instalar python setup tools
+     yum: name=python-setuptools
+     tags: docker
+
+   - name: Instalar Pypi
+     easy_install: name=pip
+     tags: docker
+
+   - name: Instalar docker-py
+     pip: name=docker-py
+     tags: docker
+
+   - name: Instalar Docker
+     yum: name=docker state=latest
+     tags: docker
+
+   - name: Comprobar si docker esta corriendo
+     service: name=docker state=running
+     tags: docker
