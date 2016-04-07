@@ -10,8 +10,8 @@ $ sudo apt-get update
 $ sudo apt-get install ansible
 ```
 ## Especificar el archivo hosts
-En el archivo hosts se deber·n especificar los nodos sobre los cuales se ejecutar·n las acciones.
-Ser· posible agrupar los mismos en categorÌas utilizando la nomenclatura **[categoria]**.
+En el archivo hosts se deber√°n especificar los nodos sobre los cuales se ejecutar√°n las acciones.
+Ser√° posible agrupar los mismos en categor√≠as utilizando la nomenclatura **[categoria]**.
 ```sh
 [vpn]
 
@@ -27,21 +27,21 @@ node03
 node01
 ```
 
-## AuthenticaciÛn SSH con usuario root y clave p˙blica
-Se crean la clave p˙blica y privada en el controller.
+## Authenticaci√≥n SSH con usuario root y clave p√∫blica
+Se crean la clave p√∫blica y privada en el controlador.
 
 ```sh
 $ sudo -s
 $ ssh-kegen
 ```
 
-Esto da como resultado la generaciÛn de los siguientes archivos:
+Esto da como resultado la generaci√≥n de los siguientes archivos:
 ```sh
 $ ls /root/.ssh/
 id_rsa  id_rsa.pub  known_hosts
 ```
 
-Para garantizar la autenticaciÛn con usuario root por ssh se deber· adicionar el archivo **/root/.ssh/authorized_keys** la clave p˙blica del controller presente en **/root/.ssh/id_rsa.pub**
+Para garantizar la autenticaci√≥n con usuario root por ssh se deber√° adicionar el archivo **/root/.ssh/authorized_keys** la clave p√∫blica del controller presente en **/root/.ssh/id_rsa.pub**
 
 Ejemplo del archivo authorized_keys:
 
@@ -50,7 +50,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2PPXTHVQt8HlXt4gzUu4W2BZ3Gk8h6ADYqXUl3Kg5
 ```
 
 ## Ejemplo playbook
-El ejemplo a continuaciÛn instala git y crea un archivo en el /opt
+El ejemplo a continuaci√≥n instala git y crea un archivo en el /opt
 ```sh
 $ more ~/ansible-tinc/install_git.yml
 ---
