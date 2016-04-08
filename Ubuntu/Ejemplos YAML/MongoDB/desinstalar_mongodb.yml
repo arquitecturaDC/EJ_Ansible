@@ -5,7 +5,7 @@
     - name: quitar key
       apt_key: url=http://keyserver.ubuntu.com id=7F0CEB10 state=absent
 
-    - name: desistalar mongodb
+    - name: desinstalar mongodb
       apt: name=mongodb-org* state=absent purge=yes
 
     - name: eliminar directorios
