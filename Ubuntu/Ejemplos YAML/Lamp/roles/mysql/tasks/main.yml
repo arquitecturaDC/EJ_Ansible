@@ -1,0 +1,8 @@
+---
+- name: instalar mysql
+  apt: name={{item}} state=latest
+  with_items:
+    - mysql-server 
+    - libapache2-mod-auth-mysql 
+    - php5-mysql 
+  notify: iniciar servicio de mysql
